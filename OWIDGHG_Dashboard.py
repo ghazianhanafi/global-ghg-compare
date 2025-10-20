@@ -15,8 +15,10 @@ st.title("World Green House Gases Analysis Dashboard")
 
 # Load your data
 work_dir=os.getcwd()+'/'
-df_=pd.read_csv(work_dir+'global_owid-co2-data.csv')
+#df_=pd.read_csv(work_dir+'global_owid-co2-data.csv')
+df_=pd.read_csv('https://raw.githubusercontent.com/owid/co2-data/master/owid-co2-data.csv')
 df_metadata=pd.read_csv(work_dir+'global_owid-co2-codebook.csv')
+df_metadata=pd.read_csv('https://raw.githubusercontent.com/owid/co2-data/master/owid-co2-codebook.csv')
 df=df_[df_['year']>1900]
 df['GDP/Capita']=df['gdp']/df['population']
 df_addmeta=pd.DataFrame({
